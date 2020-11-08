@@ -10,6 +10,7 @@ export default function Form() {
       <Time />
       <RaceType />
       <Distance />
+      <button className="btn">Submit!</button>
     </form>
   );
 }
