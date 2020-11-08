@@ -1,0 +1,15 @@
+@import "../../variables.scss";
+
+.Logo {
+  grid-column: 2 / span 1;
+  grid-row: 2;
+
+  @include flexbox-column-center;
+
+  h3 {
+    margin-top: 4px;
+    color: $primary-color;
+    font-family: $font-family;
+    font-size: 1.5rem;
+  }
+}

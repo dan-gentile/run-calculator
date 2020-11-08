@@ -1,0 +1,8 @@
+main {
+  display: grid;
+  grid-template-columns: 1fr minmax(320px, 1fr) 1fr;
+  grid-template-rows: 20px 220px 400px 1fr 20px;
+  height: 100vh;
+
+  background-color: #f7f7fa;
+}

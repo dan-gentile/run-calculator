@@ -1,0 +1,17 @@
+@import url("https://use.typekit.net/qgk2wrd.css");
+
+$primary-color: #40007a;
+$font-family: dinosaur, sans-serif;
+
+@mixin flexbox-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexbox-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
