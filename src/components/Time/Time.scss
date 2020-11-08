@@ -1,1 +1,8 @@
 @import "../../variables.scss";
+
+.Time {
+  @include flexbox-center;
+  width: 90%;
+  height: 60px;
+  margin: 20px 0px 4px 0px;
+}

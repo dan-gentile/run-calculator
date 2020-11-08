@@ -13,7 +13,7 @@ export default function InputField({ name, type }: InputProps) {
       <input
         name={name}
         type={type}
-        className="input-field"
+        className="input"
         placeholder={name}
         id={name}
       />

@@ -1,7 +1,9 @@
 @import url("https://use.typekit.net/qgk2wrd.css");
 
 $primary-color: #40007a;
+$secondary-color: #c7b1d8;
 $font-family: dinosaur, sans-serif;
+$box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
 
 @mixin flexbox-center {
   display: flex;

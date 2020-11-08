@@ -1,1 +1,7 @@
 @import "../../variables.scss";
+
+.RaceType {
+  @include flexbox-center;
+  width: 90%;
+  height: 60px;
+}

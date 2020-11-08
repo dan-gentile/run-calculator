@@ -5,7 +5,7 @@ import "./Time.scss";
 export default function Time() {
   const [inputTimeState, setInputTimeState] = useState("");
 
-  const onChange = (event: {
+  const onInputTimeChange = (event: {
     target: { value: React.SetStateAction<string> };
   }) => {
     setInputTimeState(event.target.value);
@@ -18,7 +18,7 @@ export default function Time() {
         mask="99:99:99"
         placeholder="00:00:00"
         value={inputTimeState}
-        onChange={onChange}
+        onChange={onInputTimeChange}
       />
     </div>
   );

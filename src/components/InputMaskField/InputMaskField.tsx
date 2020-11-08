@@ -21,6 +21,7 @@ export default function InputMaskField({
     <div className="InputMaskField">
       <label htmlFor={name}>{name}</label>
       <InputMask
+        className="InputMask"
         mask={mask}
         placeholder={placeholder}
         maskChar={null}
