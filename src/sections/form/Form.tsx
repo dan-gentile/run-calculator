@@ -3,11 +3,18 @@ import InputMaskField from "../../components/InputMaskField/InputMaskField";
 import "./Form.scss";
 import Button from "../../components/Button/Button";
 import SelectField from "../../components/SelectField/SelectField";
+import CheckBoxField from "../../components/CheckboxField/CheckBoxField";
 
 export default function Form() {
   const [inputTimeState, setInputTimeState] = useState("");
   const [inputDistanceState, setInputDistanceState] = useState("");
   const [unitsSelectState, setUnitsSelectState] = useState("mi");
+  const [checkBoxState, setCheckboxState] = useState({
+    marathon: false,
+    halfMarathon: false,
+    tenKm: false,
+    fiveKm: false,
+  });
 
   const onInputTimeChange = (event: {
     target: { value: React.SetStateAction<string> };
@@ -27,6 +34,36 @@ export default function Form() {
     setUnitsSelectState(event.target.value);
   };
 
+  const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.checked === true) {
+      switch (event.target.name) {
+        case "marathon":
+          setCheckboxState({ ...checkBoxState, marathon: true });
+          break;
+        case "halfMarathon":
+          setCheckboxState({ ...checkBoxState, halfMarathon: true });
+          break;
+        case "tenKm":
+          setCheckboxState({ ...checkBoxState, tenKm: true });
+          break;
+        default:
+          setCheckboxState({ ...checkBoxState, fiveKm: true });
+      }
+      const valueArr = event.target.value.split(",");
+      setInputDistanceState(valueArr[0]);
+      setUnitsSelectState(valueArr[1]);
+    } else {
+      setCheckboxState({
+        marathon: false,
+        halfMarathon: false,
+        tenKm: false,
+        fiveKm: false,
+      });
+      setInputDistanceState("");
+      setUnitsSelectState("mi");
+    }
+  };
+
   return (
     <form className="Form">
       <div className="Time">
@@ -38,11 +75,40 @@ export default function Form() {
           onChange={onInputTimeChange}
         />
       </div>
-      <div className="RaceType"></div>
+      <div className="RaceType">
+        <CheckBoxField
+          name="marathon"
+          value={["26.2", "mi"]}
+          label="Marathon"
+          isChecked={checkBoxState.marathon}
+          onChange={handleOnChange}
+        />
+        <CheckBoxField
+          name="halfMarathon"
+          value={["13.1", "mi"]}
+          label="Half Marathon"
+          isChecked={checkBoxState.halfMarathon}
+          onChange={handleOnChange}
+        />
+        <CheckBoxField
+          name="tenKm"
+          value={["10.00", "km"]}
+          label="10km"
+          isChecked={checkBoxState.tenKm}
+          onChange={handleOnChange}
+        />
+        <CheckBoxField
+          name="fiveKm"
+          value={["05.00", "km"]}
+          label="5km"
+          isChecked={checkBoxState.fiveKm}
+          onChange={handleOnChange}
+        />
+      </div>
       <div className="Distance">
         <InputMaskField
           name="Distance"
-          mask="999.99"
+          mask="99.99"
           placeholder="0.00"
           value={inputDistanceState}
           onChange={onInputDistanceChange}
@@ -50,8 +116,8 @@ export default function Form() {
         <SelectField
           value={unitsSelectState}
           onChange={onSelectStateChange}
-          label="units"
-          optionValue={["meters", "km", "mi"]}
+          label="Units"
+          optionValue={["km", "mi"]}
         />
       </div>
       <Button />

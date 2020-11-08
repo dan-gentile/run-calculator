@@ -19,7 +19,11 @@ export default function SelectField({
       <label htmlFor={label}>{label}</label>
       <select className={label} value={value} onChange={onChange}>
         {optionValue.map((option) => {
-          return <option value={option}>{option}</option>;
+          return (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          );
         })}
       </select>
     </div>
