@@ -1,0 +1,20 @@
+@import "../../variables.scss";
+
+.btn {
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  height: 30px;
+  width: 90px;
+}
+
+.btn:hover {
+  background-color: $secondary-color;
+  color: $primary-color;
+}
+
+.btn:focus {
+  background-color: lime;
+  color: #000;
+}

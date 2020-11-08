@@ -1,20 +1,13 @@
 @import "../../variables.scss";
 
-.Distance {
-  @include flexbox-center;
-  width: 90%;
-  height: 60px;
-  margin: 4px 0px 20px 0px;
-}
-
-.select {
+.select-field {
   @include flexbox-center;
 
   label {
     font-family: $font-family;
     margin-right: 20px;
   }
-  #units {
+  select {
     font-family: $font-family;
     width: 60px;
     height: 30px;
@@ -23,7 +16,7 @@
     box-shadow: $box-shadow;
     margin-right: 50px;
   }
-  #units:focus {
+  select:focus {
     outline: none !important;
     border: 1px solid $primary-color;
   }
