@@ -18,16 +18,14 @@ export default function CheckBoxField({
 }: CheckBoxFieldProps) {
   return (
     <div className="CheckBoxField">
-      <label htmlFor={name}>
-        {label}
-        <input
-          type="checkbox"
-          name={name}
-          value={value}
-          checked={isChecked}
-          onChange={onChange}
-        ></input>
-      </label>
+      <label htmlFor={name}>{label}</label>
+      <input
+        type="checkbox"
+        name={name}
+        value={value}
+        checked={isChecked}
+        onChange={onChange}
+      />
     </div>
   );
 }
