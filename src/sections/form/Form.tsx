@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import InputMaskField from "../../components/InputMaskField/InputMaskField";
+import InputField from "../../components/InputField/InputField";
 import Button from "../../components/Button/Button";
 import SelectField from "../../components/SelectField/SelectField";
 import CheckBoxField from "../../components/CheckboxField/CheckBoxField";
@@ -87,9 +87,8 @@ export default function Form() {
   return (
     <form className="Form">
       <div className="Time">
-        <InputMaskField
+        <InputField
           name="Time"
-          mask="99:99:99.99"
           placeholder="00:00:00"
           value={inputTimeState}
           onChange={onInputTimeChange}
@@ -126,9 +125,8 @@ export default function Form() {
         />
       </div>
       <div className="Distance">
-        <InputMaskField
+        <InputField
           name="Distance"
-          mask="99.99"
           placeholder="0.00"
           value={inputDistanceState}
           onChange={onInputDistanceChange}

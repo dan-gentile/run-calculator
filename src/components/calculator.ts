@@ -26,7 +26,7 @@ export default {
     } else {
       resultSeconds = resultSeconds.toString();
     }
-    const resultMinutes = Math.floor(paceMinutes).toString(); //removes the remainder + converts to string
+    const resultMinutes: string = Math.floor(paceMinutes).toString(); //removes the remainder + converts to string
     return `${resultMinutes}:${resultSeconds} /${unit}`; //returns a string of the time
   },
 };
