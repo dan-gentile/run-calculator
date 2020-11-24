@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import InputMaskField from "../../components/InputMaskField/InputMaskField";
-import "./Form.scss";
 import Button from "../../components/Button/Button";
 import SelectField from "../../components/SelectField/SelectField";
 import CheckBoxField from "../../components/CheckboxField/CheckBoxField";
+import "./Form.scss";
 
 export default function Form() {
   const [inputTimeState, setInputTimeState] = useState("");
@@ -38,16 +38,36 @@ export default function Form() {
     if (event.target.checked === true) {
       switch (event.target.name) {
         case "marathon":
-          setCheckboxState({ ...checkBoxState, marathon: true });
+          setCheckboxState({
+            halfMarathon: false,
+            tenKm: false,
+            fiveKm: false,
+            marathon: true,
+          });
           break;
         case "halfMarathon":
-          setCheckboxState({ ...checkBoxState, halfMarathon: true });
+          setCheckboxState({
+            tenKm: false,
+            fiveKm: false,
+            marathon: false,
+            halfMarathon: true,
+          });
           break;
         case "tenKm":
-          setCheckboxState({ ...checkBoxState, tenKm: true });
+          setCheckboxState({
+            fiveKm: false,
+            marathon: false,
+            halfMarathon: false,
+            tenKm: true,
+          });
           break;
         default:
-          setCheckboxState({ ...checkBoxState, fiveKm: true });
+          setCheckboxState({
+            marathon: false,
+            halfMarathon: false,
+            tenKm: false,
+            fiveKm: true,
+          });
       }
       const valueArr = event.target.value.split(",");
       setInputDistanceState(valueArr[0]);
@@ -69,7 +89,7 @@ export default function Form() {
       <div className="Time">
         <InputMaskField
           name="Time"
-          mask="99:99:99"
+          mask="99:99:99.99"
           placeholder="00:00:00"
           value={inputTimeState}
           onChange={onInputTimeChange}
@@ -120,7 +140,7 @@ export default function Form() {
           optionValue={["km", "mi"]}
         />
       </div>
-      <Button />
+      <Button className="btn" name="Submit" type="submit" />
     </form>
   );
 }

@@ -1,11 +1,12 @@
 @import "../../variables.scss";
 
 .CheckBoxField {
-  @include flexbox-center;
+  @include flexbox-even;
+  width: 100%;
 
   label {
     font-family: $font-family;
-    margin: 0 20px;
+    // margin: 0 10px;
   }
 
   input {

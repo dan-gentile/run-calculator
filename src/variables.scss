@@ -17,3 +17,15 @@ $box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
   justify-content: center;
   align-items: center;
 }
+
+@mixin flexbox-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin flexbox-even {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}

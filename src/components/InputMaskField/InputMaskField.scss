@@ -2,7 +2,7 @@
 
 .InputMaskField {
   width: 100%;
-  @include flexbox-center;
+  @include flexbox-start;
   label {
     font-family: $font-family;
     margin-right: 20px;

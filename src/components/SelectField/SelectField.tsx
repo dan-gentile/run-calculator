@@ -3,16 +3,16 @@ import "./SelectField.scss";
 
 interface SelectFieldProps {
   value: string;
-  onChange: ((event: React.ChangeEvent<HTMLSelectElement>) => void) | undefined;
   label: string;
   optionValue: Array<string>;
+  onChange: ((event: React.ChangeEvent<HTMLSelectElement>) => void) | undefined;
 }
 
 export default function SelectField({
   value,
-  onChange,
   label,
   optionValue,
+  onChange,
 }: SelectFieldProps) {
   return (
     <div className="select-field">
