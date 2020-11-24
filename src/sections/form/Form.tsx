@@ -89,6 +89,7 @@ export default function Form() {
       <div className="Time">
         <InputField
           name="Time"
+          pattern="[0-9:.]*"
           placeholder="00:00:00"
           value={inputTimeState}
           onChange={onInputTimeChange}
@@ -127,6 +128,7 @@ export default function Form() {
       <div className="Distance">
         <InputField
           name="Distance"
+          pattern="[0-9.]*"
           placeholder="0.00"
           value={inputDistanceState}
           onChange={onInputDistanceChange}

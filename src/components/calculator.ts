@@ -1,5 +1,6 @@
 export default {
   getPace: (distance: number, duration: string, unit: string) => {
+    // [0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{2}$
     const timeToSeconds: string[] = duration.split(":");
     let stringToSeconds: number = 0;
 
